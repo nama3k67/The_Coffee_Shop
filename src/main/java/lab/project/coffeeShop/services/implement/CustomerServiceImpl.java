@@ -1,4 +1,4 @@
-package lab.project.coffeeShop.services;
+package lab.project.coffeeShop.services.implement;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lab.project.coffeeShop.entities.Customer;
+import lab.project.coffeeShop.entities.Product;
+import lab.project.coffeeShop.models.ProductInfo;
 import lab.project.coffeeShop.repositories.CustomerRepository;
+import lab.project.coffeeShop.services.CustomerService;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -68,6 +71,4 @@ public class CustomerServiceImpl implements CustomerService {
 	public void deleteAll() {
 		customerRepository.deleteAll();
 	}
-	
-	
 }

@@ -1,4 +1,4 @@
-package lab.project.coffeeShop.services;
+package lab.project.coffeeShop.services.implement;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import lab.project.coffeeShop.entities.User;
 import lab.project.coffeeShop.repositories.UserRepository;
+import lab.project.coffeeShop.services.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{

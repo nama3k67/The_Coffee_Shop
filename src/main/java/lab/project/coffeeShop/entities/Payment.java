@@ -35,7 +35,7 @@ public class Payment {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date orderDate; 
 	
-	private double totalPrice; 
+	private long totalPrice; 
 	
 	@Column(nullable = false)
 	@Nationalized
@@ -49,15 +49,16 @@ public class Payment {
 	private String phoneNumber; 
 
 	private boolean status; 
-	
-	@OneToMany(mappedBy = "payment", cascade = CascadeType.ALL)
-	private Set<PaymentDetail> paymentDetails; 
-	
+
 	@ManyToOne
 	@JoinColumn(name = "customer_id")
 	private Customer customer; 
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable = false)
-	private User user; 
+	private User user;
+
+	@ManyToOne
+	@JoinColumn(name = "basket_id")
+	private Basket basket;
 }

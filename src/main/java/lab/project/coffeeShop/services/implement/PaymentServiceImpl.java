@@ -1,4 +1,4 @@
-package lab.project.coffeeShop.services;
+package lab.project.coffeeShop.services.implement;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import lab.project.coffeeShop.entities.Payment;
 import lab.project.coffeeShop.repositories.PaymentRepository;
+import lab.project.coffeeShop.services.PaymentService;
 
 public class PaymentServiceImpl implements PaymentService{
 	@Autowired

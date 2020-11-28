@@ -24,19 +24,23 @@ public class Product {
 	private int id; 
 	
 	@Column(nullable = false)
-	private String name; 
-	
+	private String name;
+
+	@Column(nullable = false)
 	private long price; 
 	
 	private String image; 
-	
+
+	@Column(nullable = false)
+	private boolean status;
+
 	@Column(columnDefinition = "TEXT")
 	private String description; 
 
 	@ManyToOne
 	@JoinColumn(name = "category_id", nullable = false)
 	private Category category; 
-	
+
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-	private Set<PaymentDetail> paymentDetails; 
+	private Set<ProductBasket> productBaskets;
 }

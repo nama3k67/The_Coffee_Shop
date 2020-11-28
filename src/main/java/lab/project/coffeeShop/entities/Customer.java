@@ -2,14 +2,7 @@ package lab.project.coffeeShop.entities;
 
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import org.hibernate.annotations.Nationalized;
 
@@ -46,5 +39,8 @@ public class Customer {
 	private Set<Payment> payments;
 	
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	private Set<Comment> comments; 
+	private Set<Comment> comments;
+
+	@OneToOne(mappedBy = "customer")
+	private Basket basket;
 }
